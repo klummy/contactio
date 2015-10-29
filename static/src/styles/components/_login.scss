@@ -1,0 +1,28 @@
+.login-wrapper {
+  background: url(../images/backgrounds/1.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100vh;
+  position: relative;
+  
+}
+
+
+
+.login {
+  @include centered-block;
+  background-color: #fff;
+  max-width: 800px;
+  opacity: 0.5;
+  .login__title {
+
+  }
+  .login__form {
+    margin-top: 1.5em;
+    > .row {
+      padding: 0 5%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.title-with-tagline {
+  text-align: center;
+  width: 100%;
+  &__title {
+    display: block;
+    font-size: 3em;
+    margin-bottom: 0;
+  }
+  &__tagline {
+    font-size: 1em;
+    font-style: italic;
+    margin: 0;
+  }
+}

@@ -22,19 +22,19 @@ gulp.task('jade', function() {
 gulp.task('sass', function() {
   return gulp.src('src/styles/*.scss')
     .pipe($.sourcemaps.init())
-      .pipe($.sass().on('error', $.sass.logError))
+    .pipe($.sass().on('error', $.sass.logError))
     .pipe($.autoprefixer({
-      browsers: ['> 3% in NG'],
+      // browsers: ['> 3% in NG'],
     }))
     .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('assets/styles'))
+    .pipe(gulp.dest('assets/styles/'))
 });
 
 gulp.task('scripts', function() {
   return gulp.src('src/scripts/bin/*.js')
     .pipe($.sourcemaps.init())
       .pipe($.concat('app.js'))
-    .pipe($.uglify())
+    // .pipe($.uglify())
     .pipe(gulp.dest('assets/scripts/'))
 });
 
@@ -43,7 +43,7 @@ gulp.task('images', function() {
     .pipe($.imagemin({
       progressive: true
     }))
-    .pipe(gulp.dest("assets/"))
+    .pipe(gulp.dest("assets/images/"))
 });
 
 gulp.task('build', ['jade', 'scripts', 'sass', 'images']);

@@ -1,0 +1,14 @@
+@mixin circle($dimension) {
+  border-radius: $dimension/2;
+  height: $dimension;
+  width: $dimension;
+}
+
+@mixin centered-block {
+  display: block;
+  margin: 0 auto;
+}
+
+.outlined {
+  border: 0.1em solid #000 !important;
+}

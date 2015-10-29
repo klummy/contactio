@@ -14,8 +14,8 @@ html
   body
     include ../images/logo/logo.svg
     //- <svg class="icon icon-contactio-logo"><use xlink:href="#icon-contactio-logo"></use></svg>
-    svg.icon.icon-contactio-logo
-      use(xlink:href="#icon-contactio-logo")
+    //- svg.icon.icon-contactio-logo
+    //-   use(xlink:href="#icon-contactio-logo")
   
     <!--[if lt IE 8]>
     p.browsehappy
@@ -24,7 +24,10 @@ html
       | to improve your experience.
     <![endif]-->
     
-    block content
+    include nav.jade
+    
+    div.container
+      block content
     
     block extrajs
     

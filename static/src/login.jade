@@ -1,0 +1,91 @@
+doctype
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Login | Contactio
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel='stylesheet', href='styles/app.css')
+    
+  body
+    include images/logo/logo.svg
+    
+    div.login-wrapper
+      <!--[if lt IE 8]>
+      p.browsehappy
+        | You are using an <strong>outdated</strong> browser.
+        | Please <a href="http://browsehappy.com/">upgrade your browser</a>
+        | to improve your experience.
+      <![endif]-->
+      
+      div.container.login
+        div
+          svg.icon.icon-contactio-logo.logo--large
+            use(xlink:href="#icon-contactio-logo")
+            
+          div.title-with-tagline
+            span.title-with-tagline__title Contactio
+            span.title-with-tagline__tagline The only contact manager you need
+          
+          div.row
+            div.col.s12
+              ul.tabs
+                li.tab.col.s6
+                  a(href="#signup") Signup
+                li.tab.col.s6
+                  a.active(href="#login") Login
+            
+            div#signup.col.s12
+              form.login__form(action="" method="post")
+                //- h5.center-align Signup
+                div.row
+                  div.input-field.col.s12.m6
+                    i.material-icons.prefix account_circle
+                    input.validate(placeholder="First Name" name="" type="text")
+                    label(for="") First Name
+                    
+                  div.input-field.col.s12.m6
+                    i.material-icons.prefix account_circle
+                    input.validate(placeholder="Last Name" name="" type="text")
+                    label(for="") Last Name
+                    
+                  div.input-field.col.s12.m6.l6
+                    i.material-icons.prefix email
+                    input.validate(placeholder="Email" name="" type="email")
+                    label(for="") Email
+                    
+                  div.input-field.col.s12.m6.l6
+                    i.material-icons.prefix lock_outline
+                    input.validate(placeholder="Password" name="" type="password")
+                    label(for="") Password
+                    i.material-icons.right show
+                  
+                  div.input-field.col.s12
+                    button.right(type="submit" value="Signup" name="" class="waves-effect waves-light btn") Login
+                      i.material-icons.right send
+                    
+            div#login.col.s12
+              form.login__form(action="" method="post")
+                //- h5.center-align Login
+                div.row
+                  div.input-field.col.s12.m6.l6
+                    i.material-icons.prefix email
+                    input.validate(placeholder="Password" name="" type="email")
+                    label(for="") Email
+                    
+                  div.input-field.col.s12.m6.l6
+                    i.material-icons.prefix lock_outline
+                    input.validate(placeholder="Password" name="" type="password")
+                    label(for="") Password
+                  
+                  div.input-field.col.s12
+                    button.right(type="submit" value="Signup" name="" class="waves-effect waves-light btn") Login
+                      i.material-icons.right send
+              
+            
+    
+    script(src="https://code.jquery.com/jquery-2.1.1.min.js")
+    script(src="scripts/app.js")
