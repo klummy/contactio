@@ -1,0 +1,33 @@
+doctype
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    block title
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    link(rel='stylesheet', href='styles/app.css')
+    
+    block extrastyles
+  body
+    include ../images/logo/logo.svg
+    //- <svg class="icon icon-contactio-logo"><use xlink:href="#icon-contactio-logo"></use></svg>
+    svg.icon.icon-contactio-logo
+      use(xlink:href="#icon-contactio-logo")
+  
+    <!--[if lt IE 8]>
+    p.browsehappy
+      | You are using an <strong>outdated</strong> browser.
+      | Please <a href="http://browsehappy.com/">upgrade your browser</a>
+      | to improve your experience.
+    <![endif]-->
+    
+    block content
+    
+    block extrajs
+    
+    script(src="https://code.jquery.com/jquery-2.1.1.min.js")
+    script(src="scripts/app.js")
+    //- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
