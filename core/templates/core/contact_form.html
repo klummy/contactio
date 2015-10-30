@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<form id="addContact" class="col s12" action="/create/" method="post">{% csrf_token %}
+<form id="addContact" class="col s12" enctype="multipart/form-data" action="/create/" method="post">{% csrf_token %}
   <div class="modal-content row">
     <h4>Add Contact</h4>
     <div class="input-field col s12 m6"><i class="material-icons prefix">account_circle</i>

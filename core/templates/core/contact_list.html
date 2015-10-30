@@ -7,7 +7,11 @@
       {% for contact in contacts %}
       <li>
         <div class="collapsible-header">
-          <img src="images/backgrounds/1.jpg" alt="" class="circle--small left">
+          {% if contact.avatar %}
+            <img src="{{ contact.avatar.url }}" alt="" class="circle--small left">
+            {% else %}
+            <svg class="icon icon-person circle--small left"><use xlink:href="#icon-person"></use></svg>
+          {% endif %}
           <span>{{ contact.first_name }} {{ contact.last_name }}</span>
           <a href="google.com" class="right waves-effect waves-teal btn-flat hide-on-small-only">Call</a>
           <a href="mailto:{{ contact.email }}" class="right waves-effect waves-teal btn-flat hide-on-small-only">Mail</a></div>

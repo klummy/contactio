@@ -10,6 +10,8 @@ class Contact(models.Model):
     phone_number = models.CharField(max_length=20, null=True)
     info = models.TextField(null=True)
 
+    avatar = models.ImageField(upload_to='contact_avatars/', null=True, blank=True)
+
     date_added = models.DateTimeField(auto_now_add=True, null=True)
     last_modified = models.DateTimeField(auto_now=True, null=True)
 

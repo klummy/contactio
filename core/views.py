@@ -15,7 +15,7 @@ class ContactListView(ListView):
 
 class CreateContactView(CreateView):
     model = Contact
-    fields = ['first_name', 'middle_name', 'last_name', 'email', 'phone_number', 'info']
+    fields = ['first_name', 'middle_name', 'last_name', 'email', 'phone_number', 'info', 'avatar']
 
 def contact_list(request):
     contacts = Contact.objects.filter(date_added__lte=timezone.now()).order_by('date_added')
