@@ -1,8 +1,41 @@
 extends includes/base
 
 block title
-  title Hello World
+  title My Contacts
 
 block content
-  h1 It works!
-  i.material-icons add
+  div.row
+    form.col.s12.mt1em
+      div.row
+        div.input-field.col.s12
+          i.material-icons.prefix search
+          input(type="text" name="" placeholder="Search")
+          label(for="") Search
+    
+  div.row
+    div.col.s12
+      ul.collapsible.popout(data-collapsible="accordion")
+        li
+          div.collapsible-header
+            img.circle--small.left(src="images/backgrounds/1.jpg" alt="")
+            span Firsto Lasto
+            a.right.waves-effect.waves-teal.btn-flat.hide-on-small-only(href="google.com") Call
+            a.right.waves-effect.waves-teal.btn-flat.hide-on-small-only(href="mailto:") Mail
+          div.collapsible-body
+            img.circle--large.centered(src="images/backgrounds/1.jpg" alt="")
+            h4.center-align First Lasto
+            span.center-align
+              a.waves-effect.waves-teal.btn-flat(href="google.com") Call
+              a.waves-effect.waves-teal.btn-flat(href="mailto:") Mail
+              a.waves-effect.waves-teal.btn-flat(href="") Edit
+              a.waves-effect.waves-teal.btn-flat(href="#!" onclick="Materialize.toast('Contact deleted', 4000)") Delete
+            span
+              i.material-icons.left phone
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            span
+              i.material-icons.left email
+              a(href="mailto:") aayekeen@gmail.com
+            span
+              i.material-icons.left info
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      

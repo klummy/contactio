@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hello World</title>
+    <title>My Contacts</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,20 +25,67 @@
       to improve your experience.
     </p><![endif]-->
     <nav>
-      <div class="nav-wrapper"><a href="" class="brand-logo">
+      <div class="nav-wrapper"><a href="/" class="brand-logo center">
           <svg class="icon icon-contactio-logo">
             <use xlink:href="#icon-contactio-logo"></use>
-          </svg></a>
-        <ul id="nav-mobile" class="right">
-          <li><a href="">Search<i class="material-icons">search</i></a></li>
-          <li><a href="login.html">Signout<i class="material-icons">search</i></a></li>
-        </ul>
+          </svg></a><a href="login.html" class="right mr1em">Welcome James, Signout</a>
       </div>
     </nav>
     <div class="container">
-      <h1>It works!</h1><i class="material-icons">add</i>
+      <div style="bottom: 45px; right: 24px;" class="fixed-action-btn"><a href="#addContact" title="Add contact" class="btn-floating btn-large red modal-trigger"><i class="large material-icons">add</i></a></div>
+      <form id="addContact" class="modal modal-fixed-footer">
+        <div class="modal-content row">
+          <h4>Add Contact</h4>
+          <div class="input-field col s12 m6"><i class="material-icons prefix">account_circle</i>
+            <input placeholder="First Name" name="" type="text" class="validate">
+            <label for="">First Name</label>
+          </div>
+          <div class="input-field col s12 m6"><i class="material-icons prefix">account_circle</i>
+            <input placeholder="Last Name" name="" type="text" class="validate">
+            <label for="">Last Name</label>
+          </div>
+          <div class="input-field col s12 m6 l6"><i class="material-icons prefix">email</i>
+            <input placeholder="Email" name="" type="email" class="validate">
+            <label for="">Email</label>
+          </div>
+          <div class="input-field col s12 m6 l6"><i class="material-icons prefix">phone</i>
+            <input placeholder="Phone Number" name="" type="email" class="validate">
+            <label for="">Phone Number</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button href="#!" type="submit" onclick="Materialize.toast('New contact added', 4000)" class="btn modal-action waves-effect waves-green">Add</button><a href="#!" class="btn-flat modal-action modal-close waves-effect">Cancel</a>
+        </div>
+      </form>
+      <div class="row">
+        <form class="col s12 mt1em">
+          <div class="row">
+            <div class="input-field col s12"><i class="material-icons prefix">search</i>
+              <input type="text" name="" placeholder="Search">
+              <label for="">Search</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <ul data-collapsible="accordion" class="collapsible popout">
+            <li>
+              <div class="collapsible-header"><img src="images/backgrounds/1.jpg" alt="" class="circle--small left"><span>Firsto Lasto</span><a href="google.com" class="right waves-effect waves-teal btn-flat hide-on-small-only">Call</a><a href="mailto:" class="right waves-effect waves-teal btn-flat hide-on-small-only">Mail</a></div>
+              <div class="collapsible-body"><img src="images/backgrounds/1.jpg" alt="" class="circle--large centered">
+                <h4 class="center-align">First Lasto</h4><span class="center-align"><a href="google.com" class="waves-effect waves-teal btn-flat">Call</a><a href="mailto:" class="waves-effect waves-teal btn-flat">Mail</a><a href="" class="waves-effect waves-teal btn-flat">Edit</a><a href="#!" onclick="Materialize.toast('Contact deleted', 4000)" class="waves-effect waves-teal btn-flat">Delete</a></span><span><i class="material-icons left">phone</i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</span><span><i class="material-icons left">email</i><a href="mailto:">aayekeen@gmail.com</a></span><span><i class="material-icons left">info</i>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="scripts/app.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.modal-trigger').leanModal();
+      });
+    </script>
   </body>
 </html>
