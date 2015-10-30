@@ -16,15 +16,7 @@ Including another URLconf
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from cdb.views import *
-
-# from core.views import ContactCreate
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^contact/(?P<slug>[-\w]+)$', ContactDetail.as_view(), name='contact-detail'),
-    url(r'^all$', ContactList.as_view(), name='all-contacts'),
-    url(r'^new-contact/$', ContactCreate.as_view(), name='create-contact'),
-    url(r'^edit-contact/$', ContactUpdate.as_view(), name='edit-contact'),
-    url(r'^delete-contact/$', ContactUpdate.as_view(), name='delete-contact'),
 ]
