@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col s12">
+    <ul data-collapsible="accordion" class="collapsible popout">
+      {% for contact in contacts %}
+      <li>
+        <div class="collapsible-header">
+          <img src="images/backgrounds/1.jpg" alt="" class="circle--small left">
+          <span>{{ contact.first_name }} {{ contact.last_name }}</span>
+          <a href="google.com" class="right waves-effect waves-teal btn-flat hide-on-small-only">Call</a>
+          <a href="mailto:{{ contact.email }}" class="right waves-effect waves-teal btn-flat hide-on-small-only">Mail</a></div>
+        <div class="collapsible-body">
+          <img src="images/backgrounds/1.jpg" alt="" class="circle--large centered">
+          <h4 class="center-align">{{ contact.first_name }} {{ contact.middle_name }} {{ contact.last_name }}</h4>
+          <span class="center-align">
+            <a href="google.com" class="waves-effect waves-teal btn-flat">Call</a>
+            <a href="mailto:" class="waves-effect waves-teal btn-flat">Mail</a>
+            <a href="{% url 'contact_edit' pk=contact.pk %}" class="waves-effect waves-teal btn-flat" onclick="Materialize.toast('{{ contact.first_name }}Edited', 4000)">Edit</a>
+            <a href="{% url 'contact_delete' pk=contact.pk %}" onclick="Materialize.toast('{{ contact.first_name }} Deleted', 4000)" class="waves-effect waves-teal btn-flat">Delete</a>
+          </span>
+          <span>
+            <i class="material-icons left">phone</i>{{ contact.phone_number }}
+          </span>
+          <span>
+            <i class="material-icons left">email</i>
+            <a href="mailto:">{{ contact.email }}</a>
+          </span>
+          <span>
+            <i class="material-icons left">info</i>{{ contact.info }}</span>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

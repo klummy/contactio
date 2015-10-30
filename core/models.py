@@ -8,6 +8,7 @@ class Contact(models.Model):
     last_name = models.CharField(max_length=20, null=True)
     email = models.EmailField(unique=True, null=True)
     phone_number = models.CharField(max_length=20, null=True)
+    info = models.TextField(null=True)
 
     date_added = models.DateTimeField(auto_now_add=True, null=True)
     last_modified = models.DateTimeField(auto_now=True, null=True)

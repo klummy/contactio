@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<form id="addContact" class="col s12" action="/create/" method="post">{% csrf_token %}
+  <div class="modal-content row">
+    <h4>Add Contact</h4>
+    <div class="input-field col s12 m6"><i class="material-icons prefix">account_circle</i>
+      <input placeholder="First Name" name="first_name" type="text" class="validate" >
+      <label for="">First Name</label>
+    </div>
+    <div class="input-field col s12 m6"><i class="material-icons prefix">account_circle</i>
+      <input placeholder="Middle Name" name="middle_name" type="text" class="validate">
+      <label for="">Middle Name</label>
+    </div>
+    <div class="input-field col s12 m6"><i class="material-icons prefix">account_circle</i>
+      <input placeholder="Last Name" name="last_name" type="text" class="validate" >
+      <label for="">Last Name</label>
+    </div>
+    <div class="input-field col s12 m6 l6"><i class="material-icons prefix">email</i>
+      <input placeholder="Email" name="email" type="email" class="validate" >
+      <label for="">Email</label>
+    </div>
+    <div class="input-field col s12 m6 l6"><i class="material-icons prefix">phone</i>
+      <input placeholder="Phone Number" name="phone_number" type="email" class="validate" >
+      <label for="">Phone Number</label>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button href="#!" type="submit" onclick="Materialize.toast('New contact added', 4000)" class="btn modal-action waves-effect waves-green">Add</button><a href="#!" class="btn-flat modal-action modal-close waves-effect">Cancel</a>
+  </div>
+</form>
+{% endblock %}
