@@ -33,7 +33,12 @@
       <div class="nav-wrapper"><a href="/" class="brand-logo center">
           <svg class="icon icon-contactio-logo">
             <use xlink:href="#icon-contactio-logo"></use>
-          </svg></a><a href="login.html" class="right mr1em">Welcome James, Signout</a>
+          </svg></a>
+          {% if user.is_authenticated %}
+            <a href="{% url 'logout_user' %}" class="right mr1em">Welcome {{ user.username|capfirst }}, Signout</a>
+            {% else %}
+              <a href="{% url 'login_user' %}" class="right mr1em">Login</a>
+          {% endif %}
       </div>
     </nav>
     <div class="container">

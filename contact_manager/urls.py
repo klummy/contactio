@@ -17,14 +17,16 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
 import core
-from core.views import ContactListView, CreateContactView
+from core.views import *
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', core.views.contact_list, name='contacts'),
-    url(r'^create/$', CreateContactView.as_view(), name='create'),
     url(r'^new/$', core.views.contact_new, name='contact_new'),
     url(r'^/(?P<pk>[0-9]+)/edit/$', core.views.contact_edit, name='contact_edit'),
     url(r'^/(?P<pk>[0-9]+)/delete/$', core.views.contact_delete, name='contact_delete'),
+    url(r'^login/$', 'core.views.login_user', name="login_user"),
+    url(r'^logout/$', 'core.views.logout_user', name='logout_user'),
+    url(r'^signup/$', 'core.views.register_user', name='register_user'),
 ]
